@@ -2,7 +2,7 @@ service: my-serverless-backend
 
 provider:
   name: aws
-  runtime: nodejs23.x
+  runtime: nodejs20.x
   region: ${env:AWS_REGION, 'us-east-2'}
   stage: ${opt:stage, 'prd'}
   iamRoleStatements:
