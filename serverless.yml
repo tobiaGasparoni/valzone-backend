@@ -1,0 +1,27 @@
+service: my-serverless-backend
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ${env:AWS_REGION}
+  stage: ${opt:stage, 'dev'}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Scan
+        - dynamodb:PutItem
+      Resource: arn:aws:dynamodb:${env:AWS_REGION}:*:table/my-table
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
+  createItem:
+    handler: handler.createItem
+    events:
+      - http:
+          path: item
+          method: post
