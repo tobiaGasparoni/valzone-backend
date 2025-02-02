@@ -2,15 +2,15 @@ service: my-serverless-backend
 
 provider:
   name: aws
-  runtime: nodejs18.x
-  region: ${env:AWS_REGION}
-  stage: ${opt:stage, 'dev'}
+  runtime: nodejs23.x
+  region: ${env:AWS_REGION, 'us-east-2'}
+  stage: ${opt:stage, 'prd'}
   iamRoleStatements:
     - Effect: Allow
       Action:
         - dynamodb:Scan
         - dynamodb:PutItem
-      Resource: arn:aws:dynamodb:${env:AWS_REGION}:*:table/my-table
+      Resource: arn:aws:dynamodb:${env:AWS_REGION, 'us-east-2'}:*:table/my-table
 
 functions:
   hello:
