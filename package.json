@@ -1,18 +1,17 @@
 {
-    "name": "serverless-backend",
-    "version": "1.0.0",
-    "description": "Serverless API",
-    "main": "handler.ts",
-    "scripts": {
-      "deploy": "serverless deploy"
-    },
-    "dependencies": {
-      "aws-sdk": "^2.1361.0"
-    },
-    "devDependencies": {
-      "@types/aws-lambda": "^8.10.122",
-      "serverless": "^4.0.0",
-      "typescript": "^5.2.2"
-    }
+  "name": "serverless-backend",
+  "version": "1.0.0",
+  "description": "Serverless API",
+  "main": "handler.ts",
+  "scripts": {
+    "deploy": "serverless deploy"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1361.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.122",
+    "serverless": "^4.5.3",
+    "typescript": "^5.2.2"
   }
-  
+}
